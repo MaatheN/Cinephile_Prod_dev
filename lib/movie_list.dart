@@ -40,10 +40,8 @@ class MovieListState extends State<MovieList> {
           style: new TextStyle(color: mainColor, fontFamily: 'Arvo', fontWeight: FontWeight.bold),
         ),
         actions : <Widget>[
-          new Icon(
-            Icons.menu,
-            color: mainColor,
-          )
+          new IconButton(
+            icon: Icon(Icons.menu), onPressed: _afficherFavs)
         ],
       ),
       body: new Padding(padding: const EdgeInsets.all(16.0),
@@ -71,6 +69,9 @@ class MovieListState extends State<MovieList> {
       ),),
     );
   }
+}
+void _afficherFavs() {
+  
 }
 
 Future<Map> getJson() async {
