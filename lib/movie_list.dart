@@ -34,7 +34,7 @@ class MovieListState extends State<MovieList> {
         elevation: 0.3,
         centerTitle: true,
         backgroundColor: Colors.white,
-        leading: new Icon(Icons.arrow_back, color: mainColor,),
+        leading: new Icon(Icons.close, color: mainColor,),
         title: new Text(
           'Films',
           style: new TextStyle(color: mainColor, fontFamily: 'Arvo', fontWeight: FontWeight.bold),
@@ -47,7 +47,7 @@ class MovieListState extends State<MovieList> {
         ],
       ),
       body: new Padding(padding: const EdgeInsets.all(16.0),
-      child: new Column(
+        child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           new MovieTitle(mainColor),
