@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "870092427029",
+    "firebase_url": "https://le-cinephil.firebaseio.com",
+    "project_id": "le-cinephil",
+    "storage_bucket": "le-cinephil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870092427029:android:3150bdaa700eb7e49fe31c",
+        "android_client_info": {
+          "package_name": "com.tata.flutter_lcinephil_dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870092427029-0p15n5m2dp9n6u69o0vviorfaqbqgamk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbE0iOShH_pLP0vgsvocQ07dWNH2x0fOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870092427029-0p15n5m2dp9n6u69o0vviorfaqbqgamk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
