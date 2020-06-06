@@ -103,7 +103,9 @@ class MovieDetail extends StatelessWidget {
 //                      ),
                       new Padding(padding: const EdgeInsets.all(16.0),
                         child: new InkWell(
-                          onTap: null,
+                          onTap: (){
+
+                          },
                           child: new Container(
                             padding: const EdgeInsets.all(16.0),
                             alignment: Alignment.center,
@@ -115,6 +117,7 @@ class MovieDetail extends StatelessWidget {
                         ),
                       ),
                     ],
+
                   )
                 ]
               ),

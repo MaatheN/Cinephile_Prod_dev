@@ -41,7 +41,7 @@ class MovieListState extends State<MovieList> {
         ),
         actions : <Widget>[
           new IconButton(
-            icon: Icon(Icons.menu), onPressed: _afficherFavs)
+            icon: Icon(Icons.menu), color: mainColor, onPressed: _afficherFavs)
         ],
       ),
       body: new Padding(padding: const EdgeInsets.all(16.0),
@@ -69,10 +69,39 @@ class MovieListState extends State<MovieList> {
       ),),
     );
   }
+  void _afficherFavs() {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+//          final Iterable
+//        final List<Widget> divided = ListTile
+//        .divideTiles(
+//            context: context,
+//            tiles: tiles)
+//          .toList();
+        return Scaffold(
+          appBar: AppBar(
+            title: Text('Films Favoris'),
+          ),
+          body: new Center(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Text(
+                  'Yo.',
+                ),
+              ],
+            ),
+          ),
+      );
+        }
+      )
+    );
+  }
+
+
 }
-void _afficherFavs() {
-  
-}
+
 
 Future<Map> getJson() async {
   var url = 'http://api.themoviedb.org/3/discover/movie?api_key=7c3ad0459e057222f2ec8a495916fca7';
