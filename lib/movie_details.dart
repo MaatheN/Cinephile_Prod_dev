@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:ui' as ui;
@@ -62,48 +61,51 @@ class MovieDetail extends StatelessWidget {
                   new Padding(
                       padding: const EdgeInsets.all(10.0)),
                   new Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      new Expanded(
-                        child: new InkWell(
-                          onTap: null,
-                          child: new Container(
-                            width: 150.0,
-                            height: 60.0,
-                            alignment: Alignment.center,
-                            child: new Text(
-                              'Partager',
-                              style: new TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'Arvo',
-                                  fontSize: 20.0
-                              ),
-                            ),
-                            decoration: new BoxDecoration(
-                                borderRadius: new BorderRadius.circular(10.0),
-                                color: const Color(0xaa3C3261)
-                            ),
-                          ),
-                        ),
-                      ),
+//                      new Expanded(
+//                        child: new InkWell(
+//                          onTap: null,
+//                          child: new Container(
+//                            width: 150.0,
+//                            height: 60.0,
+//                            alignment: Alignment.center,
+//                            child: new Text(
+//                              'Partager',
+//                              style: new TextStyle(
+//                                  color: Colors.white,
+//                                  fontFamily: 'Arvo',
+//                                  fontSize: 20.0
+//                              ),
+//                            ),
+//                            decoration: new BoxDecoration(
+//                                borderRadius: new BorderRadius.circular(10.0),
+//                                color: const Color(0xaa3C3261)
+//                            ),
+//                          ),
+//                        ),
+//                      ),
+//                      new Padding(padding: const EdgeInsets.all(16.0),
+//                        child: new InkWell(
+//                          onTap: null,
+//                          child: new Container(
+//                            padding: const EdgeInsets.all(16.0),
+//                            alignment: Alignment.center,
+//                            child: new Icon(
+//                              Icons.share,
+//                              color: Colors.white,
+//                            ),
+//                            decoration: new BoxDecoration(
+//                                borderRadius: new BorderRadius.circular(10.0),
+//                                color: const Color(0xaa3C3261)),
+//                          ),
+//                        )
+//                      ),
                       new Padding(padding: const EdgeInsets.all(16.0),
                         child: new InkWell(
-                          onTap: null,
-                          child: new Container(
-                            padding: const EdgeInsets.all(16.0),
-                            alignment: Alignment.center,
-                            child: new Icon(
-                              Icons.share,
-                              color: Colors.white,
-                            ),
-                            decoration: new BoxDecoration(
-                                borderRadius: new BorderRadius.circular(10.0),
-                                color: const Color(0xaa3C3261)),
-                          ),
-                        )
-                      ),
-                      new Padding(padding: const EdgeInsets.all(8.0),
-                        child: new InkWell(
-                          onTap: null,
+                          onTap: (){
+
+                          },
                           child: new Container(
                             padding: const EdgeInsets.all(16.0),
                             alignment: Alignment.center,
@@ -115,12 +117,12 @@ class MovieDetail extends StatelessWidget {
                         ),
                       ),
                     ],
+
                   )
                 ]
               ),
             ),
           )
-
         ],
       ),
     );

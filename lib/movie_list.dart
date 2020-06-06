@@ -34,20 +34,18 @@ class MovieListState extends State<MovieList> {
         elevation: 0.3,
         centerTitle: true,
         backgroundColor: Colors.white,
-        leading: new Icon(Icons.arrow_back, color: mainColor,),
+        leading: new Icon(Icons.close, color: mainColor,),
         title: new Text(
           'Films',
           style: new TextStyle(color: mainColor, fontFamily: 'Arvo', fontWeight: FontWeight.bold),
         ),
         actions : <Widget>[
-          new Icon(
-            Icons.menu,
-            color: mainColor,
-          )
+          new IconButton(
+            icon: Icon(Icons.menu), color: mainColor, onPressed: _afficherFavs)
         ],
       ),
       body: new Padding(padding: const EdgeInsets.all(16.0),
-      child: new Column(
+        child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           new MovieTitle(mainColor),
@@ -71,7 +69,39 @@ class MovieListState extends State<MovieList> {
       ),),
     );
   }
+  void _afficherFavs() {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+//          final Iterable
+//        final List<Widget> divided = ListTile
+//        .divideTiles(
+//            context: context,
+//            tiles: tiles)
+//          .toList();
+        return Scaffold(
+          appBar: AppBar(
+            title: Text('Films Favoris'),
+          ),
+          body: new Center(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Text(
+                  'Yo.',
+                ),
+              ],
+            ),
+          ),
+      );
+        }
+      )
+    );
+  }
+
+
 }
+
 
 Future<Map> getJson() async {
   var url = 'http://api.themoviedb.org/3/discover/movie?api_key=7c3ad0459e057222f2ec8a495916fca7';
