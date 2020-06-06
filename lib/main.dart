@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Le Cinéphile',
+      title: 'Ciné Fil',
       home: new Authentification(),
     );
   }
