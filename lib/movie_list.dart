@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'movie_details.dart';
+import 'globals.dart';
 
 class MovieList extends StatefulWidget {
   @override
@@ -41,7 +42,7 @@ class MovieListState extends State<MovieList> {
         ),
         actions : <Widget>[
           new IconButton(
-            icon: Icon(Icons.menu), color: mainColor, onPressed: _afficherFavs)
+            icon: Icon(Icons.person), color: mainColor, onPressed: _afficherFavs)
         ],
       ),
       body: new Padding(padding: const EdgeInsets.all(16.0),
@@ -55,6 +56,11 @@ class MovieListState extends State<MovieList> {
                 itemBuilder: (context, i) {
                   return new FlatButton(
                     onPressed: (){
+                      if(favoritesFilms.contains(movies[i]['title'])){
+                        movies[i]['fav'] = true;
+                      }else {
+                        movies[i]['fav'] = false;
+                      }
                       Navigator.push(context, new MaterialPageRoute(builder: (context){
                         return new MovieDetail(movies[i]);
                       }));
@@ -83,16 +89,28 @@ class MovieListState extends State<MovieList> {
           appBar: AppBar(
             title: Text('Films Favoris'),
           ),
-          body: new Center(
-            child: new Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                new Text(
-                  'Yo.',
-                ),
-              ],
+          body: ListView.builder(
+              itemCount: favoritesFilms.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  height: 50,
+                  margin: EdgeInsets.all(2),
+                  child: Center(
+                    child: Text('${favoritesFilms[index]}'),
+                  ),
+                );
+              }
             ),
-          ),
+//          body: new Center(
+//            child: new Column(
+//              mainAxisAlignment: MainAxisAlignment.center,
+//              children: <Widget>[
+//                new Text(
+//                  favoritedFilms,
+//                ),
+//              ],
+//            ),
+//          ),
       );
         }
       )
