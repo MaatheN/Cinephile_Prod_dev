@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_lcinephil_dev/auth/resetMdp.dart';
 import '../movie_list.dart';
 import 'inscription.dart';
 import 'user.dart';
@@ -28,11 +29,11 @@ class AuthentificationPageState extends State<Authentification> {
         elevation: 0.3,
         centerTitle: true,
         title: new Text('Le Cinéphil\'',
-        style: new TextStyle(
-          color: Colors.white,
-          fontFamily: 'Arvo',
-          fontWeight: FontWeight.bold,
-        ),),
+          style: new TextStyle(
+            color: Colors.white,
+            fontFamily: 'Arvo',
+            fontWeight: FontWeight.bold,
+          ),),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
@@ -58,13 +59,35 @@ class AuthentificationPageState extends State<Authentification> {
                 },
               ),
               SizedBox(height: 20.0),
+              new Padding(padding: const EdgeInsets.all(16.0),
+                child: RaisedButton.icon(
+                  onPressed: () {
+                    Navigator.push(context, new MaterialPageRoute(builder: (context){
+//                      return new Inscription();
+                      return new ResetMdp();
+                    }));
+                  },
+                  icon: Icon(
+                    Icons.help,
+                    color: couleurPrincipale,
+                  ),
+                  label: Text(
+                    'Mot de passe oublié',
+                    style: new TextStyle(
+                        color: couleurPrincipale,
+                        fontFamily: 'Arvo'
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.0),
               RaisedButton(
                 //color: couleurPrincipale,
                 child: Text(
                   'Connexion',
                   style: new TextStyle(
-                    color: couleurPrincipale,
-                    fontFamily: 'Alvo'
+                      color: couleurPrincipale,
+                      fontFamily: 'Alvo'
                   ),
                 ),
                 onPressed: () async {
@@ -89,36 +112,22 @@ class AuthentificationPageState extends State<Authentification> {
                   onPressed: () {
                     Navigator.push(context, new MaterialPageRoute(builder: (context){
                       return new Inscription();
+//                      return new ResetMdp();
                     }));
                   },
-                    icon: Icon(
-                      Icons.person_add,
-                      color: couleurPrincipale,
-                    ),
-                    label: Text(
-                      'Inscription',
-                      style: new TextStyle(
+                  icon: Icon(
+                    Icons.person_add,
+                    color: couleurPrincipale,
+                  ),
+                  label: Text(
+                    'Inscription',
+                    style: new TextStyle(
                         color: couleurPrincipale,
                         fontFamily: 'Arvo'
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 20.0,),
-              new Padding(padding: const EdgeInsets.all(16.0),
-                child: RaisedButton.icon(
-                  onPressed: () {
-                    Navigator.push(context, new MaterialPageRoute(builder: (context) {
-                      return new ResetMdp();
-                    }));
-                  },
-                  label: Text('Mot de passe oublié',
-                  style: new TextStyle(
-                    color: couleurPrincipale,
-                    fontFamily: 'Arvo'
-                  ),
-                ),
-              ),)
             ],
           ),
         ),
@@ -160,6 +169,11 @@ class AuthService {
       return null;
     }
   }
+
+  Future sendPasswordResetEmail(String email) async {
+    return _auth.sendPasswordResetEmail(email: email);
+  }
+
 }/*
 class Inscription extends StatelessWidget {
   final AuthService _authService = AuthService();

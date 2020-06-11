@@ -52,7 +52,7 @@ class _InscriptionState extends State<Inscription> {
               SizedBox(height: 20.0),
               TextFormField(
                 obscureText: true,
-                validator: (val) => val.length < 6 ? '+6 charactères Mote de Passe' : null,
+                validator: (val) => val.length < 6 ? '+6 charactères Mot de Passe' : null,
                 onChanged: (val) {
                   setState(() => password = val);
                 },
