@@ -100,26 +100,25 @@ class AuthentificationPageState extends State<Authentification> {
                       style: new TextStyle(
                         color: couleurPrincipale,
                         fontFamily: 'Arvo'
-                    ),),
-                /*child: new InkWell(
-                  onTap: (){
-                    Navigator.push(context, new MaterialPageRoute(builder: (context){
-                      return new Inscription();
-                    }));
-                    },
-                  child: new Container(
-                    padding: const EdgeInsets.all(16.0),
-                    alignment: Alignment.center,
-                    child: new Text(
-                      'Inscription',
-                      style : new TextStyle(
-                        color: Colors.red
-                      ),
-                      child : new Icon(Icons.person_add,color: Colors.red,)
                     ),
-                  ),*/
+                  ),
                 ),
-              )
+              ),
+              SizedBox(height: 20.0,),
+              new Padding(padding: const EdgeInsets.all(16.0),
+                child: RaisedButton.icon(
+                  onPressed: () {
+                    Navigator.push(context, new MaterialPageRoute(builder: (context) {
+                      return new ResetMdp();
+                    }));
+                  },
+                  label: Text('Mot de passe oublié',
+                  style: new TextStyle(
+                    color: couleurPrincipale,
+                    fontFamily: 'Arvo'
+                  ),
+                ),
+              ),)
             ],
           ),
         ),
